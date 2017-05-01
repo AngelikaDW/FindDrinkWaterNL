@@ -177,3 +177,5 @@
 52.0972746,4.2562376, Zuiderstrand 1, 2583 Den Haag, Netherlands,
 52.3871318,4.9184199, Zwanenplein 34, 1021 CM Amsterdam, Netherlands,
 52.1161834,4.2880846, Gevers Deynootweg 155, 2586 HL Den Haag, Netherlands,
+52.706288,4.689358, Oorsprongweg 1, 1871 HA Schoorl, Netherlands,
+52.700757, 4.692943, Duinvoetweg 7, 1871 EA Schoorl, Netherlands,

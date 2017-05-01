@@ -1,47 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_centerHorizontal="true">
+    android:layout_centerHorizontal="true"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:text="Find drink water near you" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
 
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="horizontal">-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="Find - drink - water near you"
+            android:textAppearance="@style/InfoHeader" />
 
-        <!--<ImageView-->
-            <!--android:layout_width="50dp"-->
-            <!--android:layout_height="50dp"-->
-            <!--android:scaleType="centerCrop"-->
-            <!--android:scr="@drawable/ic_icon" />-->
+        <Button
+            android:id="@+id/button_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/button_info" />
 
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="50dp"-->
-            <!--android:text="Find drink water" />-->
-        <!--<ImageButton-->
-            <!--android:layout_width="50dp"-->
-            <!--android:layout_height="50dp"-->
-            <!--android:scr="@drawable/ic_icon"-->
-            <!--android:scaleType="centerCrop"/>-->
-
-
-        <!--<TextView-->
-        <!--android:id="@+id/latOutput"-->
-        <!--android:layout_width="0dp"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_weight="1"-->
-        <!--android:text="Latitude goes here"      />-->
-
-    <!--</LinearLayout>-->
+    </RelativeLayout>
 
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
@@ -49,6 +35,7 @@
         android:name="com.google.android.gms.maps.MapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.example.angelika.finddrinkwaternl.MainActivity" />
+        tools:context="com.example.angelika.finddrinkwaternl.MainActivity"
+        tools:layout="@layout/activity_main" />
 
 </LinearLayout>

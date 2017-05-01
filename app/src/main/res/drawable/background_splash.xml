@@ -6,7 +6,8 @@
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@mipmap/ic_launcher_icon" />
+            android:src="@mipmap/ic_water_pin" />
     </item>
+
 
 </layer-list>

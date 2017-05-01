@@ -1,13 +1,16 @@
 package com.example.angelika.finddrinkwaternl;
 
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,24 +40,22 @@ public class MainActivity extends AppCompatActivity implements
         GoogleApiClient.OnConnectionFailedListener,
         com.google.android.gms.location.LocationListener {
 
+    private static final int PERMISSION_REQUEST_CODE_LOCATION = 1; //NEW
+    private static final int MY_PERMISSIONS_REQUEST = 1;
+    private final String LOG_TAG = AppCompatActivity.class.getSimpleName();
     GoogleMap m_map;
     boolean mapReady = false;
-    private static final int PERMISSION_REQUEST_CODE_LOCATION = 1; //NEW
-
     ArrayList<String[]> coordinates = new ArrayList<>();
-
-    private final String LOG_TAG = AppCompatActivity.class.getSimpleName();
+    Marker marker;
     private TextView txtOutput;
     private GoogleApiClient mGoogleApiClient;
     private LocationRequest mLocationRequest;
-
-    private static final int MY_PERMISSIONS_REQUEST = 1;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         //shows the map
         MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -74,7 +75,14 @@ public class MainActivity extends AppCompatActivity implements
             Toast.makeText(getApplicationContext(),
                     "Problems: " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-
+        Button info_button = (Button) findViewById(R.id.button_info);
+        info_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent infoIntent = new Intent(MainActivity.this, InfoActivity.class);
+                startActivity(infoIntent);
+            }
+        });
 
 
     }
@@ -212,7 +220,6 @@ public class MainActivity extends AppCompatActivity implements
         Log.i(LOG_TAG, "GoogleApiClient connection has failed");
     }
 
-    Marker marker;
     @Override
     public void onLocationChanged(Location location) {
         Log.v("CURRENT LOCATION", location.toString());
