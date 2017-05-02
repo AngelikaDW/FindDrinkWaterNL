@@ -6,28 +6,29 @@
     android:layout_centerHorizontal="true"
     android:orientation="vertical">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:orientation="horizontal"
+        android:paddingLeft="8dp">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:text="Find - drink - water near you"
-            android:textAppearance="@style/InfoHeader" />
+            android:text="@string/text_intro"
+            android:textAppearance="@style/InfoText"
+            android:gravity="top"/>
 
         <Button
             android:id="@+id/button_info"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:text="@string/button_info" />
+            android:text="@string/button_info"
+            style="?android:attr/borderlessButtonStyle"/>
 
-    </RelativeLayout>
+    </LinearLayout>
 
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
